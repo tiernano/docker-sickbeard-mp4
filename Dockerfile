@@ -66,10 +66,10 @@ WORKDIR /work
 RUN wget https://bootstrap.pypa.io/ez_setup.py -O - | python
 
 # Install Sick Beard
-RUN git clone git://github.com/midgetspy/Sick-Beard.git sickbeard
+### RUN git clone git://github.com/midgetspy/Sick-Beard.git sickbeard
 
 # Install Couch Potato
-RUN git clone https://github.com/RuudBurger/CouchPotatoServer.git couch-potato
+### RUN git clone https://github.com/RuudBurger/CouchPotatoServer.git couch-potato
 
 ## MP4 Automator
 RUN git clone git://github.com/mdhiggins/sickbeard_mp4_automator.git mp4_automator
