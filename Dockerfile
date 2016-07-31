@@ -55,7 +55,7 @@ RUN PATH="$PATH:$HOME/bin" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./
 	  --enable-libvorbis \
 	  --enable-libx264 \
 	  --enable-nonfree  
-RUN PATH="$PATH:$HOME/bin" make  
+RUN PATH="$PATH:$HOME/bin" make  -j5
 RUN	make install  
 RUN	make distclean  
 RUN	hash -r
