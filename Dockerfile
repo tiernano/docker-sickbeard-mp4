@@ -26,7 +26,7 @@ Run apt-get -qy install libmp3lame-dev libopus-dev unzip
 
 # Install FFMPEG
 ## Dep. libfdk-aac
-RUN	git clone git://github.com/mstorsjo/fdk-aac.git fdk-aac
+RUN	git clone https://github.com/mstorsjo/fdk-aac.git fdk-aac
 
 WORKDIR /work/fdk-aac
 RUN autoreconf -fiv 
@@ -65,22 +65,13 @@ WORKDIR /work
 ## Python Setup Tools
 RUN wget https://bootstrap.pypa.io/ez_setup.py -O - | python
 
-# Install Sick Beard
-### RUN git clone git://github.com/midgetspy/Sick-Beard.git sickbeard
-
-# Install Couch Potato
-### RUN git clone https://github.com/RuudBurger/CouchPotatoServer.git couch-potato
-
 ## MP4 Automator
-RUN git clone git://github.com/mdhiggins/sickbeard_mp4_automator.git mp4_automator
+RUN git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git mp4_automator
 COPY autoProcess.ini /work/mp4_automator/autoProcess.ini
 
 # Install Configs
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /work/supervisord.conf
-
-EXPOSE 8081
-EXPOSE 5050
 
 VOLUME ["/config", "/storage", "/incoming"]
 
